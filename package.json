@@ -1,0 +1,19 @@
+{
+  "name": "ts3-jest-tutorial",
+  "version": "0.0.0",
+  "description": "A tutorial to explain mapped types, conditional mapping, and parameterized tests with Jest and TypeScript 3.0+",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theutz/ts3-jest-tutorial.git"
+  },
+  "author": "Michael Utz <michael@theutz.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theutz/ts3-jest-tutorial/issues"
+  },
+  "homepage": "https://github.com/theutz/ts3-jest-tutorial#readme"
+}
