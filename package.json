@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/theutz/ts3-jest-tutorial/issues"
   },
-  "homepage": "https://github.com/theutz/ts3-jest-tutorial#readme"
+  "homepage": "https://github.com/theutz/ts3-jest-tutorial#readme",
+  "devDependencies": {
+    "typescript": "^3.0.3"
+  }
 }
