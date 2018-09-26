@@ -2,7 +2,7 @@
   "extends": ["tslint:latest", "tslint-config-prettier"],
   "rules": {
     "curly": [true, "as-needed"],
-    "no-submodule-imports": [true, ["~"]],
-    "no-implicit-dependencies": [true, ["~"]]
+    "no-submodule-imports": [true, "~", "lodash"],
+    "no-implicit-dependencies": [true, "dev", ["~"]]
   }
 }
