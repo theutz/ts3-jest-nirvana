@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseStringToNumericArray() given a string with a mix of valid and invalid values should throw 1`] = `"'three' is not a number."`;
+
+exports[`parseStringToNumericArray() given a string with a number should return 1`] = `
+Array [
+  1,
+]
+`;
+
+exports[`parseStringToNumericArray() given a string with a series of numbers should return 1`] = `
+Array [
+  1,
+  2,
+  3,
+]
+`;
+
+exports[`parseStringToNumericArray() given a string with a single non-numeric value should throw 1`] = `"'one' is not a number."`;
+
+exports[`parseStringToNumericArray() given a string with undefined should return 1`] = `null`;
