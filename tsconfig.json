@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "strict": true,
+    "types": ["jest"],
+    "sourceMap": true,
+    "target": "es5",
+    "paths": {
+      "~": ["src/index.ts"],
+      "~/*": ["src/*"]
+    }
+  }
+}

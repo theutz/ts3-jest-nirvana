@@ -4,7 +4,19 @@
   "description": "A tutorial to explain mapped types, conditional mapping, and parameterized tests with Jest and TypeScript 3.0+",
   "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "tsc",
+    "lint": "tslint --project .",
+    "lint:watch": "nodemon --exec \"npm run lint\" --watch \"./src\"",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "pretty-quick": "pretty-quick --staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pretty-quick --staged && npm run lint && npm test",
+      "pre-push": "npm test"
+    }
   },
   "repository": {
     "type": "git",
@@ -17,6 +29,15 @@
   },
   "homepage": "https://github.com/theutz/ts3-jest-tutorial#readme",
   "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "husky": "^1.0.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.7.0",
+    "ts-jest": "^23.10.2",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
     "typescript": "^3.0.3"
   }
 }

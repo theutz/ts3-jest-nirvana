@@ -1,2 +1,6 @@
+# Modules
 node_modules
-dist
+
+# Dist
+dist/*
+!dist/.gitkeep
