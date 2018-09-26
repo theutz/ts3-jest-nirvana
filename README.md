@@ -13,8 +13,8 @@ But using a structure like I'm proposing here provides total consistency in the 
 ## Installation
 
 ```bash
-git clone https://github.com/theutz/ts3-jest-tutorial
-cd ts3-jest-tutorial
+git clone https://github.com/theutz/ts3-jest-nirvana
+cd ts3-jest-nirvana
 npm install
 ```
 
