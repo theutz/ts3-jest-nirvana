@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`parseStringToNumericArray() given a string with a mix of valid and invalid values should throw 1`] = `"'three' is not a number."`;
+exports[`parseStringToNumericArray() given a string with invalid data like a mix of valid and invalid values should throw 1`] = `"'three' is not a number."`;
 
-exports[`parseStringToNumericArray() given a string with a number should return 1`] = `
+exports[`parseStringToNumericArray() given a string with invalid data like a single non-numeric value should throw 1`] = `"'one' is not a number."`;
+
+exports[`parseStringToNumericArray() given a string with valid data like a number should return 1`] = `
 Array [
   1,
 ]
 `;
 
-exports[`parseStringToNumericArray() given a string with a series of numbers should return 1`] = `
+exports[`parseStringToNumericArray() given a string with valid data like a series of numbers should return 1`] = `
 Array [
   1,
   2,
@@ -16,6 +18,4 @@ Array [
 ]
 `;
 
-exports[`parseStringToNumericArray() given a string with a single non-numeric value should throw 1`] = `"'one' is not a number."`;
-
-exports[`parseStringToNumericArray() given a string with undefined should return 1`] = `null`;
+exports[`parseStringToNumericArray() given a string with valid data like undefined should return 1`] = `null`;
