@@ -1,9 +1,9 @@
-import { parseStringToNumericArray } from '~'
+import { parseStringToNumericArray, stringifySomeNumbers } from '~'
 import { theFunction } from '~/test-utils'
 import { TestData } from '~/types'
 
 describe(theFunction(parseStringToNumericArray), () => {
-  type SUT = typeof parseStringToNumericArray
+  type Data = TestData<typeof parseStringToNumericArray>
 
   describe('given a string with', () => {
     // This is an example of how you might setup a parameterized test
@@ -14,10 +14,10 @@ describe(theFunction(parseStringToNumericArray), () => {
     // Additionally, it would be trivial to add new test cases, since the
     // form of the test remains the same regardless of the cases presented.
     describe('valid data like', () => {
-      const validData: TestData<SUT> = [
+      const validData: Data = [
         ['undefined', [undefined]],
         ['a number', ['1']],
-        ['a series of numbers', ['1,2,3']]
+        ['a series of numbers', ['1,2,-3']]
       ]
 
       it.each(validData)('%s should return', (_, args) => {
@@ -28,7 +28,7 @@ describe(theFunction(parseStringToNumericArray), () => {
     })
 
     describe('invalid data like', () => {
-      const invalidData: TestData<SUT> = [
+      const invalidData: Data = [
         ['a single non-numeric value', ['one']],
         ['a mix of valid and invalid values', ['1,2,three,4']]
       ]
@@ -40,5 +40,27 @@ describe(theFunction(parseStringToNumericArray), () => {
         }).toThrowErrorMatchingSnapshot()
       })
     })
+  })
+})
+
+// A More Complex Example
+//
+// The following SUT requires multiple test cases
+// to nail down. Luckily, that's SUPER easy with our new setup.
+describe(theFunction(stringifySomeNumbers), () => {
+  type Data = TestData<typeof stringifySomeNumbers>
+
+  const data: Data = [
+    ['a single argument as an array', [[1, 23, 3]]],
+    ['an array followed by individual number arguments', [[1], 2, 3, -1048]],
+    ['multiple number arguments', [1, 2, 3]],
+    ['a single number argument', [1]],
+    ['a list of arguments with an array in the middle', [1, [2, -5, 7], 3]],
+    ['undefined', [undefined]],
+    ['0', [0]]
+  ]
+
+  it.each(data)('given %s returns a sorted list', (_, args) => {
+    expect(stringifySomeNumbers(...args)).toMatchSnapshot()
   })
 })

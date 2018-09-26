@@ -12,10 +12,24 @@ Array [
 
 exports[`parseStringToNumericArray() given a string with valid data like a series of numbers should return 1`] = `
 Array [
+  -3,
   1,
   2,
-  3,
 ]
 `;
 
-exports[`parseStringToNumericArray() given a string with valid data like undefined should return 1`] = `null`;
+exports[`parseStringToNumericArray() given a string with valid data like undefined should return 1`] = `Array []`;
+
+exports[`stringifySomeNumbers() given 0 returns a sorted list 1`] = `"0"`;
+
+exports[`stringifySomeNumbers() given a list of arguments with an array in the middle returns a sorted list 1`] = `"-5,1,2,3,7"`;
+
+exports[`stringifySomeNumbers() given a single argument as an array returns a sorted list 1`] = `"1,3,23"`;
+
+exports[`stringifySomeNumbers() given a single number argument returns a sorted list 1`] = `"1"`;
+
+exports[`stringifySomeNumbers() given an array followed by individual number arguments returns a sorted list 1`] = `"-1048,1,2,3"`;
+
+exports[`stringifySomeNumbers() given multiple number arguments returns a sorted list 1`] = `"1,2,3"`;
+
+exports[`stringifySomeNumbers() given undefined returns a sorted list 1`] = `""`;
